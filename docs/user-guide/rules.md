@@ -75,7 +75,7 @@ Here are all the rules within stylelint, grouped by the [*thing*](http://apps.wo
 ### Value
 
 -   [`value-keyword-case`](../../lib/rules/value-keyword-case/README.md): Specify lowercase or uppercase for keywords values.
--   [`value-no-vendor-prefix`](../../lib/rules/value-no-vendor-prefix/README.md): Disallow vendor prefixes for values.
+-   [`value-no-vendor-prefix`](../../lib/rules/value-no-vendor-prefix/README.md): Disallow vendor prefixes for values (Autofixable).
 
 ### Value list
 
@@ -100,7 +100,7 @@ Here are all the rules within stylelint, grouped by the [*thing*](http://apps.wo
 -   [`property-blacklist`](../../lib/rules/property-blacklist/README.md): Specify a blacklist of disallowed properties.
 -   [`property-case`](../../lib/rules/property-case/README.md): Specify lowercase or uppercase for properties.
 -   [`property-no-unknown`](../../lib/rules/property-no-unknown/README.md): Disallow unknown properties.
--   [`property-no-vendor-prefix`](../../lib/rules/property-no-vendor-prefix/README.md): Disallow vendor prefixes for properties.
+-   [`property-no-vendor-prefix`](../../lib/rules/property-no-vendor-prefix/README.md): Disallow vendor prefixes for properties (Autofixable).
 -   [`property-whitelist`](../../lib/rules/property-whitelist/README.md): Specify a whitelist of allowed properties.
 
 ### Keyframe declaration
@@ -173,7 +173,7 @@ Here are all the rules within stylelint, grouped by the [*thing*](http://apps.wo
 -   [`selector-no-qualifying-type`](../../lib/rules/selector-no-qualifying-type/README.md): Disallow qualifying a selector by type.
 -   [`selector-no-type`](../../lib/rules/selector-no-type/README.md): Disallow type selectors.
 -   [`selector-no-universal`](../../lib/rules/selector-no-universal/README.md): Disallow the universal selector.
--   [`selector-no-vendor-prefix`](../../lib/rules/selector-no-vendor-prefix/README.md): Disallow vendor prefixes for selectors.
+-   [`selector-no-vendor-prefix`](../../lib/rules/selector-no-vendor-prefix/README.md): Disallow vendor prefixes for selectors (Autofixable).
 -   [`selector-pseudo-class-blacklist`](../../lib/rules/selector-pseudo-class-blacklist/README.md): Specify a blacklist of disallowed pseudo-class selectors.
 -   [`selector-pseudo-class-case`](../../lib/rules/selector-pseudo-class-case/README.md): Specify lowercase or uppercase for pseudo-class selectors.
 -   [`selector-pseudo-class-no-unknown`](../../lib/rules/selector-pseudo-class-no-unknown/README.md): Disallow unknown pseudo-class selectors.
@@ -211,7 +211,7 @@ Here are all the rules within stylelint, grouped by the [*thing*](http://apps.wo
 -   [`media-feature-name-blacklist`](../../lib/rules/media-feature-name-blacklist/README.md): Specify a blacklist of disallowed media feature names.
 -   [`media-feature-name-case`](../../lib/rules/media-feature-name-case/README.md): Specify lowercase or uppercase for media feature names.
 -   [`media-feature-name-no-unknown`](../../lib/rules/media-feature-name-no-unknown/README.md): Disallow unknown media feature names.
--   [`media-feature-name-no-vendor-prefix`](../../lib/rules/media-feature-name-no-vendor-prefix/README.md): Disallow vendor prefixes for media feature names.
+-   [`media-feature-name-no-vendor-prefix`](../../lib/rules/media-feature-name-no-vendor-prefix/README.md): Disallow vendor prefixes for media feature (Autofixable) names.
 -   [`media-feature-name-whitelist`](../../lib/rules/media-feature-name-whitelist/README.md): Specify a whitelist of allowed media feature names.
 -   [`media-feature-no-missing-punctuation`](../../lib/rules/media-feature-no-missing-punctuation/README.md): Disallow missing punctuation for non-boolean media features **(deprecated)**.
 -   [`media-feature-parentheses-space-inside`](../../lib/rules/media-feature-parentheses-space-inside/README.md): Require a single space or disallow whitespace on the inside of the parentheses within media features.
@@ -237,7 +237,7 @@ Here are all the rules within stylelint, grouped by the [*thing*](http://apps.wo
 -   [`at-rule-name-newline-after`](../../lib/rules/at-rule-name-newline-after/README.md): Require a newline after at-rule names.
 -   [`at-rule-name-space-after`](../../lib/rules/at-rule-name-space-after/README.md): Require a single space after at-rule names.
 -   [`at-rule-no-unknown`](../../lib/rules/at-rule-no-unknown/README.md): Disallow unknown at-rules.
--   [`at-rule-no-vendor-prefix`](../../lib/rules/at-rule-no-vendor-prefix/README.md): Disallow vendor prefixes for at-rules.
+-   [`at-rule-no-vendor-prefix`](../../lib/rules/at-rule-no-vendor-prefix/README.md): Disallow vendor prefixes for at-rules (Autofixable).
 -   [`at-rule-semicolon-newline-after`](../../lib/rules/at-rule-semicolon-newline-after/README.md): Require a newline after the semicolon of at-rules.
 -   [`at-rule-semicolon-space-before`](../../lib/rules/at-rule-semicolon-space-before/README.md): Require a single space or disallow whitespace before the semicolons of at rules.
 -   [`at-rule-whitelist`](../../lib/rules/at-rule-whitelist/README.md): Specify a whitelist of allowed at-rules.
