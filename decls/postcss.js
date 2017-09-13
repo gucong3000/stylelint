@@ -54,14 +54,17 @@ declare class postcss$decl extends postcss$node {
   }
 }
 
-declare function postcss$parser(css: ?string, opts: postcss$options): postcss$node
+declare function postcss$parser(
+  css: ?string,
+  opts: postcss$options
+): postcss$node;
 
-declare function postcss$stringifier(postcss$node, builder: Function): void
+declare function postcss$stringifier(postcss$node, builder: Function): void;
 
 export type postcss$syntax = {
   stringify?: postcss$stringifier,
-  parse?: postcss$parser,
-}
+  parse?: postcss$parser
+};
 
 export type postcss$options = {
   from?: string,
@@ -69,7 +72,7 @@ export type postcss$options = {
   parser?: postcss$parser,
   stringifier?: postcss$stringifier,
   syntax?: postcss$syntax,
-  map?: Object,
+  map?: Object
 };
 
 export type postcss$result = {
