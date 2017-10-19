@@ -33,7 +33,7 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 #### Shorthand property
 
--   [`shorthand-property-no-redundant-values`](../../lib/rules/shorthand-property-no-redundant-values/README.md): Disallow redundant values in shorthand properties.
+-   [`shorthand-property-no-redundant-values`](../../lib/rules/shorthand-property-no-redundant-values/README.md): Disallow redundant values in shorthand properties (Autofixable).
 
 #### Property
 
@@ -73,7 +73,6 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 #### General / Sheet
 
--   [`max-nesting-depth`](../../lib/rules/max-nesting-depth/README.md): Limit the depth of nesting.
 -   [`no-descending-specificity`](../../lib/rules/no-descending-specificity/README.md): Disallow selectors of lower specificity from coming after overriding selectors of higher specificity.
 -   [`no-duplicate-selectors`](../../lib/rules/no-duplicate-selectors/README.md): Disallow duplicate selectors.
 -   [`no-empty-source`](../../lib/rules/no-empty-source/README.md): Disallow empty sources.
@@ -176,6 +175,10 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 -   [`comment-word-blacklist`](../../lib/rules/comment-word-blacklist/README.md): Specify a blacklist of disallowed words within comments.
 
+#### General / Sheet
+
+-   [`max-nesting-depth`](../../lib/rules/max-nesting-depth/README.md): Limit the depth of nesting.
+
 ### Stylistic issues
 
 #### Color
@@ -206,8 +209,8 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 #### Number
 
--   [`number-leading-zero`](../../lib/rules/number-leading-zero/README.md): Require or disallow a leading zero for fractional numbers less than 1.
--   [`number-no-trailing-zeros`](../../lib/rules/number-no-trailing-zeros/README.md): Disallow trailing zeros in numbers.
+-   [`number-leading-zero`](../../lib/rules/number-leading-zero/README.md): Require or disallow a leading zero for fractional numbers less than 1 (Autofixable).
+-   [`number-no-trailing-zeros`](../../lib/rules/number-no-trailing-zeros/README.md): Disallow trailing zeros in numbers (Autofixable).
 
 #### String
 
@@ -215,7 +218,7 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 #### Length
 
--   [`length-zero-no-unit`](../../lib/rules/length-zero-no-unit/README.md): Disallow units for zero lengths.
+-   [`length-zero-no-unit`](../../lib/rules/length-zero-no-unit/README.md): Disallow units for zero lengths (Autofixable).
 
 #### Unit
 
@@ -294,7 +297,7 @@ Here are all the rules within stylelint, grouped first [by category](../../VISIO
 
 #### Rule
 
--   [`rule-empty-line-before`](../../lib/rules/rule-empty-line-before/README.md): Require or disallow an empty line before rules.
+-   [`rule-empty-line-before`](../../lib/rules/rule-empty-line-before/README.md): Require or disallow an empty line before rules (Autofixable).
 
 #### Media feature
 
