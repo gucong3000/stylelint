@@ -4,6 +4,8 @@ As with any other [PostCSS plugin](https://github.com/postcss/postcss#plugins), 
 
 *However, if a dedicated stylelint task runner plugin [is available](complementary-tools.md) (e.g. [gulp-stylelint](https://github.com/olegskl/gulp-stylelint) or [grunt-stylelint](https://github.com/wikimedia/grunt-stylelint)) we recommend you use that rather than this plugin, as they provide better reporting.*
 
+<!-- TOC -->
+
 ## Installation
 
 stylelint is an [npm package](https://www.npmjs.com/package/stylelint). Install it using:
@@ -58,7 +60,7 @@ A path to a file containing patterns describing files to ignore. The path can be
 We recommend you lint your CSS before applying any transformations. You can do this by either:
 
 -   creating a separate lint task that is independent of your build one.
--   using the [`plugins` option](https://github.com/postcss/postcss-import#plugins) of [`postcss-import`](https://github.com/postcss/postcss-import) or [`postcss-easy-import`](https://github.com/TrySound/postcss-easy-import) to lint the your files before any transformations.
+-   using the [`plugins` option](https://github.com/postcss/postcss-import#plugins) of [`postcss-import`](https://github.com/postcss/postcss-import) or [`postcss-easy-import`](https://github.com/TrySound/postcss-easy-import) to lint your files before any transformations.
 -   placing stylelint at the beginning of your plugin pipeline.
 
 You'll also need to use a reporter. *The stylelint plugin registers warnings via PostCSS*. Therefore, you'll want to use it with a PostCSS runner that prints warnings or another PostCSS plugin whose purpose is to format and print warnings (e.g. [`postcss-reporter`](https://github.com/postcss/postcss-reporter)).
@@ -78,7 +80,7 @@ var postcss = require("postcss")
 var css = fs.readFileSync("input.css", "utf8")
 
 postcss([
-  require("stylelint")({ /* your options */ })
+  require("stylelint")({ /* your options */ }),
   require("postcss-reporter")({ clearReportedMessages: true })
 ])
   .process(css, {
@@ -104,13 +106,13 @@ var stylelint = require("stylelint")
 var css = fs.readFileSync("lib/app.css", "utf8")
 
 postcss(
-  processors: [
+  [
     require("postcss-import")({
       plugins: [
         require("stylelint")({ /* your options */ })
       ]
     }),
-    require("postcss-cssnext")
+    require("postcss-cssnext"),
     require("postcss-reporter")({ clearReportedMessages: true })
   ]
 )

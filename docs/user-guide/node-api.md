@@ -7,6 +7,8 @@ stylelint.lint(options)
   .then(function(resultObject) { .. });
 ```
 
+<!-- TOC -->
+
 ## Installation
 
 stylelint is an [npm package](https://www.npmjs.com/package/stylelint). Install it using:
@@ -80,6 +82,7 @@ You can use this option to see what your linting results would be like without t
 ### `disableDefaultIgnores`
 
 If `true`, stylelint will not automatically ignore the contents of `node_modules` and `bower_components`. (By default, these directories are automatically ignored.)
+
 ### `cache`
 
 Store the info about processed files in order to only operate on the changed ones the next time you run stylelint. Enabling this option can dramatically improve stylelint's speed, because only changed files will be linted.
@@ -103,6 +106,13 @@ If `true`, `ignoreDisables` will also be set to `true` and the returned data wil
 Use this report to clean up your codebase, keeping only the stylelint-disable comments that serve a purpose.
 
 *The recommended way to use this option is through the CLI.* It will output a clean report to the console.
+
+### `maxWarnings`
+
+Sets a limit to the number of warnings accepted. Will add a `maxWarningsExceeded` property to the returned data if the number of found warnings exceeds the given limit.  
+The value is an Object (e.g. `{ maxWarnings: 0, foundWarnings: 12 }`).
+
+*The recommended way to use this option is through the CLI.* It will exit with code 2 when `maxWarnings` is exceeded.
 
 ### `ignorePath`
 
@@ -169,7 +179,7 @@ stylelint.lint({
   .catch(function(err) {
     // do things with err e.g.
     console.error(err.stack);
-  });;
+  });
 ```
 
 If `myConfig` *does* contain relative paths for `extends` or `plugins`, you *do* have to use `configBasedir`:

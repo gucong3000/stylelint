@@ -2,6 +2,8 @@
 
 The linter *expects a configuration object*. You can either craft your own config or extend an existing one.
 
+<!-- TOC -->
+
 ## Loading the configuration object
 
 Finding and loading of your configuration object is done with [cosmiconfig](https://github.com/davidtheclark/cosmiconfig). Starting from the current working directory, it will look for the following possible sources, in this order:
@@ -36,7 +38,7 @@ The `rules` property is *an object whose keys are rule names and values are rule
     "block-no-empty": null,
     "color-no-invalid-hex": true,
     "comment-empty-line-before": [ "always", {
-      "ignore": ["stylelint-command", "after-comment"]
+      "ignore": ["stylelint-commands", "after-comment"]
     } ],
     "declaration-colon-space-after": "always",
     "indentation": ["tab", {

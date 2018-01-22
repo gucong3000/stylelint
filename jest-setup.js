@@ -40,7 +40,7 @@ global.testRule = (rule, schema) => {
       describe("accept", () => {
         passingTestCases.forEach(testCase => {
           const spec = testCase.only ? it.only : it;
-          describe(JSON.stringify(schema.config), () => {
+          describe(JSON.stringify(schema.config, replacer), () => {
             describe(JSON.stringify(testCase.code), () => {
               spec(testCase.description || "no description", () => {
                 const options = {
@@ -50,15 +50,16 @@ global.testRule = (rule, schema) => {
                 };
                 return stylelint(options).then(output => {
                   expect(output.results[0].warnings).toEqual([]);
+                  expect(output.results[0].parseErrors).toEqual([]);
                   if (!schema.fix) return;
 
                   // Check the fix
-                  return stylelint(
-                    Object.assign({ fix: true }, options)
-                  ).then(output => {
-                    const fixedCode = getOutputCss(output);
-                    expect(fixedCode).toBe(testCase.code);
-                  });
+                  return stylelint(Object.assign({ fix: true }, options)).then(
+                    output => {
+                      const fixedCode = getOutputCss(output);
+                      expect(fixedCode).toBe(testCase.code);
+                    }
+                  );
                 });
               });
             });
@@ -71,7 +72,7 @@ global.testRule = (rule, schema) => {
       describe("reject", () => {
         schema.reject.forEach(testCase => {
           const spec = testCase.only ? it.only : it;
-          describe(JSON.stringify(schema.config), () => {
+          describe(JSON.stringify(schema.config, replacer), () => {
             describe(JSON.stringify(testCase.code), () => {
               spec(testCase.description || "no description", () => {
                 const options = {
@@ -82,6 +83,7 @@ global.testRule = (rule, schema) => {
                 return stylelint(options).then(output => {
                   const warning = output.results[0].warnings[0];
 
+                  expect(output.results[0].parseErrors).toEqual([]);
                   expect(testCase).toHaveMessage();
 
                   if (testCase.message !== undefined) {
@@ -103,13 +105,13 @@ global.testRule = (rule, schema) => {
                   }
 
                   // Check the fix
-                  return stylelint(
-                    Object.assign({ fix: true }, options)
-                  ).then(output => {
-                    const fixedCode = getOutputCss(output);
-                    expect(fixedCode).toBe(testCase.fixed);
-                    expect(fixedCode).not.toBe(testCase.code);
-                  });
+                  return stylelint(Object.assign({ fix: true }, options)).then(
+                    output => {
+                      const fixedCode = getOutputCss(output);
+                      expect(fixedCode).toBe(testCase.fixed);
+                      expect(fixedCode).not.toBe(testCase.code);
+                    }
+                  );
                 });
               });
             });
@@ -128,4 +130,8 @@ function getOutputCss(output) {
     return css.replace(/(\n?\s*\/\/.*?)[ \t]*(\r?\n)/g, "$1$2");
   }
   return css;
+}
+
+function replacer(key, value) {
+  return value instanceof RegExp ? `[RegExp] ${value.toString()}` : value;
 }

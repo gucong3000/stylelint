@@ -43,3 +43,23 @@ a { max-width: max-content; }
 ```css
 a { background: linear-gradient(bottom, #000, #fff); }
 ```
+
+## Optional secondary options
+
+### `ignoreValues: ["string"]`
+
+Given:
+
+```js
+["grab", "max-content"]
+```
+
+The following patterns are *not* considered violations:
+
+```css
+cursor: -webkit-grab;
+```
+
+```css
+.foo { max-width: -moz-max-content; }
+```
